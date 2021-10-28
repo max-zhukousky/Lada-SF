@@ -5,7 +5,7 @@ public class CarsPriceControllerTest {
     public static final String carType = 'Legend';
     public static final String carPackage = 'Comfort';
 
-	@isTest
+    @isTest
     public static void testGetCarsFromParams() {
         TestCarsPriceControllerFactory.setProperties(carName, carType, carPackage);
         TestCarsPriceControllerFactory.createProduct();
