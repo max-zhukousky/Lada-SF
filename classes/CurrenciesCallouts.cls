@@ -32,7 +32,6 @@ public class CurrenciesCallouts {
         }
 
         for (Object key : results.keySet()) {
-            // Map<String, Object> currenciesMap = (Map<String, Object>)obj;
             String abbreviation = (String)results.get(ABBREVIATION);
             Decimal rate = (Decimal)results.get(RATE);
             if (isoCodeToConversionRateMap.containsKey(abbreviation) && rate > 0) {
