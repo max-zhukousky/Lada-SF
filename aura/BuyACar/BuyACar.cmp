@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+    controller="CenterController" access="global">
+        <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Contact">
+            <lightning:notificationsLibrary aura:id="notifLib"/>
+            <lightning:messages/>
+            <lightning:inputField aura:id="fieldLastName" fieldName="LastName" required="true"/>
+            <lightning:inputField aura:id="fieldEmail" fieldName="Email" required="true"/>
+            <div class="slds-m-top_small">
+                <lightning:button type="submit" label="Send" onclick="{!c.handleSuccess}"/>
+                <lightning:button label="Reset Form" onclick="{!c.handleReset}"/>
+            </div>
+        </lightning:recordEditForm>
+</aura:component>

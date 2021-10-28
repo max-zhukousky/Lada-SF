@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global"
+    controller="CenterController">
+    <aura:attribute name="centersList" type="Center__c[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:iteration items="{!v.centersList}" var="center">
+        <div class="slds-card">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="standard:agent_home" size="big"></lightning:icon>
+            </div>  
+        <div class="slds-card__header address-header">{!center.Name}</div>
+        <div class="address">
+            <div>{!center.Street__c}</div>
+            <div>{!center.City__c}</div>
+        </div>      
+        </div>
+    </aura:iteration>
+</aura:component>

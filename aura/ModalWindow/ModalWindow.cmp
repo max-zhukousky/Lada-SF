@@ -1,0 +1,31 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global"
+    controller="CenterController">
+ 
+    <aura:attribute name="carImage" type="String" default="{!$Resource.granta}" />
+    <aura:attribute name="carName" type="Product2" required="true"/>
+    <aura:attribute name="carType" type="Product2" />
+    <aura:attribute name="carPackage" type="Product2" />
+  
+    <lightning:layout horizontalAlign="center" class="slds-clearfix">
+        <lightning:layoutItem size="9" flexibility="auto">
+            <img src="{!v.carImage}" alt="The image of the car" />
+            <div class="slds-float_left slds-m-right_x-small">
+                <p><strong>Name: </strong> </p>
+                <p><strong>Type: </strong> </p>
+                <p><strong>Package: </strong></p>
+            </div>
+            <div class="slds-float_left">
+                <p>{!v.carName}</p>
+                <p>{!v.carType}</p>
+                <p>{!v.carPackage}</p>
+            </div>
+            <br/>   
+            <div class="slds-float_right slds-m-right_x-small">
+                <lightning:button variant="brand" label="Generate PDF With Prices" 
+                    onclick="{!c.generatePDFButton}"/>
+                <lightning:button variant="brand" label="Buy This Car" 
+                    onclick="{!c.buyACar}"/>
+            </div>
+        </lightning:layoutItem> 
+    </lightning:layout>
+</aura:component>

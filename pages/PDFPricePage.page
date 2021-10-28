@@ -1,0 +1,11 @@
+<apex:page controller="CarsPriceController" renderAs="pdf" >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!carsPrices}" var="car">
+            <apex:column value="{!car.Package__c}" />
+            <apex:repeat value="{!car.PriceBookEntries}" var="entry">
+                <apex:column value="{!entry.UnitPrice}" />
+            </apex:repeat>
+            <apex:column />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
